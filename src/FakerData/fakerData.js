@@ -2,6 +2,7 @@ import { faker } from '@faker-js/faker';
 
 const NUMBER_OF_BRANDS = 2;
 const NUMBER_OF_PRODUCT = 16;
+const NUMBER_OF_SUGGESTION = 5;
 
 function getProductDetails(brandName){
   return{
@@ -43,6 +44,22 @@ function productData(NUMBER_OF_PRODUCT) {
   return res;
 }
 
-// export brands;
+function getLatestTrends(NUMBER_OF_SUGGESTION) {
+  let res = [];
+  for(let i=0; i<NUMBER_OF_SUGGESTION; i++){
+    res.push({
+      id: faker.string.uuid(),
+      name: faker.commerce.productName(),
+      image: faker.image.urlLoremFlickr({
+        width: 480,
+        height: 640,
+        category: "fashion"
+      }),
+    })
+  }
+  return res;
+}
+
+export const trendData = getLatestTrends(NUMBER_OF_SUGGESTION);
 
 export default productData(NUMBER_OF_PRODUCT);

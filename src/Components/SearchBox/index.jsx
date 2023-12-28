@@ -1,5 +1,6 @@
 import './SearchBox.css';
-import {ReactComponent as SearchIcon} from '../../Assets/SearchIcon.svg'
+import {ReactComponent as SearchIcon} from '../../Assets/SearchIcon.svg';
+import SearchSuggestion from '../SearchSuggestion';
 
 function index() {
   return (
@@ -10,6 +11,7 @@ function index() {
         <button>
             <SearchIcon className='search-Icon'/>
         </button>
+        {/* <SearchSuggestion /> */}
     </div>
   )
 }
