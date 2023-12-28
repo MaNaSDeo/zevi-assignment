@@ -26,7 +26,7 @@ function Card(
             "id": "4b373d94-0539-41ca-8d70-f77f9c98347b",
             "name": "Small Steel Shoes",
             "originalPrice": "1317.00",
-            "image": "https://loremflickr.com/480/640/fashion?lock=3742676826456064",
+            "image": "https://loremflickr.com/480/640/fashion?lock=8037515336351744",
             "rating": 4,
             "review": 167,
             "brand": "Nader LLC"
@@ -34,7 +34,7 @@ function Card(
             "id": "11598a05-779f-4497-a81e-42571123b296",
             "name": "Unbranded Fresh Tuna",
             "originalPrice": "4971.00",
-            "image": "https://loremflickr.com/480/640/fashion?lock=8037515336351744",
+            "image": "https://loremflickr.com/480/640/fashion?lock=3742676826456064",
             "rating": 4,
             "review": 259,
             "brand": "Hills - Jones"
@@ -94,11 +94,9 @@ function Card(
                 className='wishlist-btn'
                 onClick={() => updateWishList(element.id)}
             >
-                {/* <FavoriteBorderOutlinedIcon 
-                    
-                /> */}
                 {wishlistComponent(element.id)}
             </button>
+            <button className='view-product tracking-widest'>View Product</button>
         </div>
         <div className='card-bottom'>
             <p className='product-name'>{element.name}</p>

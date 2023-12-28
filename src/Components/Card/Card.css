@@ -22,6 +22,22 @@
     top: 1rem;
     right: 1rem;
 }
+.view-product{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    background-color: rgb(131,148,236);
+    opacity: 0;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: opacity 0.5s ease-in-out;
+}
+.card:hover .view-product {
+    opacity: 0.7;
+}
 .card-bottom{
     display: flex;
     flex-direction: column;
