@@ -1,9 +1,10 @@
 import './LandingPage.css'
+import SearchBox from '../SearchBox'
 
 function index() {
   return (
     <div className='landing-page'>
-      Landing PAge
+      <SearchBox />
     </div>
   )
 }
