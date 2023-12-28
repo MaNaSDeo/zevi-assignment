@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from "react-router-dom";
 import './SearchSuggestion.css';
 import { ProductContext } from '../../Context/ProductContextProvider';
 
@@ -29,11 +30,14 @@ function SearchSuggestion() {
             Latest Trends
         </p>
         <div className="suggestion-card-container">
-            {trendData.map(element => <SuggestionCard 
+            {trendData.map(element => <Link to={'/product'}>
+              <SuggestionCard 
                 key={element.id}
                 image={element.image}
                 name={element.name}
-            />)}
+              />
+            </Link>
+            )}
         </div>
       </div>
       <div className="text-suggestion">
