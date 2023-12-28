@@ -7,7 +7,7 @@ function getProductDetails(brandName){
   return{
     id: faker.string.uuid(),
     name: faker.commerce.productName(),
-    price: faker.commerce.price({min: 1000, max: 5000, symbol: 'Rs.'}),
+    price: faker.commerce.price({min: 1000, max: 5000}),
     image: faker.image.urlLoremFlickr({
       width: 480,
       height: 640,

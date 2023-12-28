@@ -1,13 +1,13 @@
 import ProductContextProvider from './Context/ProductContextProvider';
 
-import LandingPage from './Components/LandingPage';
-import Cart from './Components/Cart'
+// import LandingPage from './Components/LandingPage';
+import Card from './Components/Card'
 
 function App() {
   return (
     <ProductContextProvider>
       {/* <LandingPage /> */}
-      <Cart />
+      <Card />
     </ProductContextProvider>
   );
 }
