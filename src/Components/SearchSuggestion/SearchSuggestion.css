@@ -1,0 +1,26 @@
+.search-suggestion-page{
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+.card{
+    width: 200px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+.card-top{
+    width: 100%;
+    height: 250px;
+    border: none;
+    /* overflow: hidden; */
+}
+.card-top img{
+    border-radius: 0.4rem;
+}
+.product-name{
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
