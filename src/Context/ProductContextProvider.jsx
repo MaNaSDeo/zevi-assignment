@@ -1,12 +1,13 @@
 import { createContext, useState,useEffect } from "react";
-import productsData from '../FakerData/fakerData';
-import { brands } from '../FakerData/fakerData'
+// import productsData from '../FakerData/fakerData';
+import productsData, { brands, trendData } from '../FakerData/fakerData'
 
 export const ProductContext = createContext({
     productsData: [],
     wishlist: [],
     updateWishList: () => {},
     handleChange: () => {},
+    trendData: [],
 })
 
 export default function ProductContextProvider({children}){
@@ -15,6 +16,11 @@ export default function ProductContextProvider({children}){
     const [brandCheckedValues, setBrandCheckedValues] = useState([]);
     const [priceCheckedValues, setPriceCheckedValues] = useState([]);
     const [ratingCheckedValues, setRatingCheckedValues] = useState([]);
+    const [latestTrendingData, setLatestTrendingData] = useState([]);
+
+    useEffect(() => {
+        setLatestTrendingData([...trendData])
+    }, [])
 
     // Use useEffect to call the filter function when the checked values change
     useEffect(() => {
@@ -101,6 +107,7 @@ export default function ProductContextProvider({children}){
         wishlist: wishlist,
         updateWishList: handleUpdateWishList,
         handleChange: handleChange,
+        trendData: latestTrendingData,
     }
 
     return <ProductContext.Provider value={ctxValue}>

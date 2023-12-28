@@ -2,6 +2,7 @@
     width: 100%;
     height: auto;
     background-color: white;
+    padding: 2rem;
 }
 .card{
     width: 200px;
@@ -23,4 +24,26 @@
 .product-name{
     font-weight: 500;
     margin-top: 0.5rem;
+}
+.suggestion-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.suggestion-heading{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0.5rem 0 1rem 0;
+}
+.text-suggestion{
+    font-size: 1.2rem;
+    font-weight: 450;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.text-suggestion p{
+    margin-bottom: 0.25rem;
 }
