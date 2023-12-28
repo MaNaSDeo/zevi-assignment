@@ -1,0 +1,14 @@
+.landing-page{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../Images/zevi-dextop-01.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media (max-width: 600px){
+    .landing-page{
+        background-image: url('../../Images//zevi-mobile-01.jpg');
+    }
+}
