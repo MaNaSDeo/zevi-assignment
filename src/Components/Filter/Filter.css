@@ -1,0 +1,12 @@
+.filter-page{
+    width: 20vw !important;
+    height: 100%;
+}
+.accordion-heading{
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.accordion-details{
+    display: flex;
+    flex-direction: column;
+}
