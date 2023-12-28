@@ -10,11 +10,17 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import './Filter.css'
 
 import { useState } from 'react';
+import { brands } from '../../FakerData/fakerData'
 
 function Filter() {
-
     const [checkedValues, setCheckedValues] = useState([]);
-    console.log(checkedValues);
+
+    const testObj = [{
+        id: 1,
+        filterName: 'BRAND',
+        filterValue: brands
+    }]
+    console.log(testObj);
 
     const handleChange = (event) => {
         const value = event.target.value;
@@ -24,44 +30,32 @@ function Filter() {
         } else {
           setCheckedValues(checkedValues.filter((v) => v !== value));
         }
-      };
+    };
 
   return (
     <div className='filter-page'>
-      {/* <p>Search Results</p> */}
-      <Accordion className="filter-accordion">
+      {testObj.map(element => <Accordion className="filter-accordion" key={element.id}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
+          id={element.filterName}
         >
-          <p className='accordion-heading'>BRAND</p>
+          <p className='accordion-heading'>{element.filterName}</p>
         </AccordionSummary>
         <AccordionDetails className='accordion-details'>
-            <FormControlLabel 
+        {element.filterValue.map(fltrValue => <FormControlLabel 
                 control={
                     <Checkbox
                         icon={<CropSquareIcon />}
                         checkedIcon={<CheckBoxIcon />}
-                        value='H&M'
+                        value={fltrValue}
                         onChange={handleChange}
                     />
                 }
-                label='H&M'
-            />
-            <FormControlLabel 
-                control={
-                    <Checkbox
-                        icon={<CropSquareIcon />}
-                        checkedIcon={<CheckBoxIcon />}
-                        value='Mango'
-                        onChange={handleChange}
-                    />
-                }
-                label='Mango'
-            />
+                label={fltrValue}
+            />)}
         </AccordionDetails>
-      </Accordion>
+      </Accordion>)}
+      
     </div>
   )
 }

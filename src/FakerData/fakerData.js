@@ -25,11 +25,14 @@ function getProductDetails(brandName){
   }
 }
 
-const brands = [];
-
-for(let i=0; i<NUMBER_OF_BRANDS; i++){
-  brands.push(faker.company.name());
+function brandsName(n){
+  const res = [];
+  for(let i=0; i<NUMBER_OF_BRANDS; i++){
+    res.push(faker.company.name());
+  }
+  return res;
 }
+export const brands = brandsName(NUMBER_OF_BRANDS);
 
 function productData(NUMBER_OF_PRODUCT) {
   const res = [];
@@ -39,5 +42,7 @@ function productData(NUMBER_OF_PRODUCT) {
   }
   return res;
 }
+
+// export brands;
 
 export default productData(NUMBER_OF_PRODUCT);

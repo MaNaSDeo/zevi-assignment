@@ -28,7 +28,6 @@ export default function ProductContextProvider({children}){
         productsData: products,
         wishlist: wishlist,
         updateWishList: handleUpdateWishList,
-
     }
 
     return <ProductContext.Provider value={ctxValue}>
