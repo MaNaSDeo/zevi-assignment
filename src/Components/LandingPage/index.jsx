@@ -3,7 +3,7 @@
 import './LandingPage.css';
 import Header from '../Header';
 import SearchBox from '../SearchBox';
-import SearchSuggestion from '../SearchSuggestion';
+// import SearchSuggestion from '../SearchSuggestion';
 // import Cart from '../Cart'
 function LandingPage() {
 
@@ -14,7 +14,7 @@ function LandingPage() {
       <Header />
       <SearchBox />
       {/* <Cart /> */}
-      <SearchSuggestion />
+      {/* <SearchSuggestion /> */}
     </div>
   )
 }
