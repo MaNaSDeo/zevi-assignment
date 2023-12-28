@@ -11,51 +11,124 @@ import './Filter.css'
 
 import { useState } from 'react';
 import { brands } from '../../FakerData/fakerData'
+import Rating from '../Rating'
 
 function Filter() {
-    const [checkedValues, setCheckedValues] = useState([]);
+    const [brandCheckedValues, setBrandCheckedValues] = useState([]);
+    const [priceCheckedValues, setPriceCheckedValues] = useState([]);
+    const [ratingCheckedValues, setRatingCheckedValues] = useState([]);
 
-    const testObj = [{
-        id: 1,
-        filterName: 'BRAND',
-        filterValue: brands
-    }]
-    console.log(testObj);
+    console.log(brandCheckedValues, priceCheckedValues, ratingCheckedValues);
 
-    const handleChange = (event) => {
+    const handleChange = (event, filterType) => {
         const value = event.target.value;
         const checked = event.target.checked;
-        if (checked) {
-          setCheckedValues([...checkedValues, value]);
-        } else {
-          setCheckedValues(checkedValues.filter((v) => v !== value));
+
+        if(filterType==='brand'){
+            if (checked) {
+                setBrandCheckedValues([...brandCheckedValues, value]);
+              } else {
+                setBrandCheckedValues(brandCheckedValues.filter((v) => v !== value));
+              }
+        }else if(filterType==='price'){
+            if (checked) {
+                setPriceCheckedValues([...priceCheckedValues, value]);
+              } else {
+                setPriceCheckedValues(priceCheckedValues.filter((v) => v !== value));
+              }
+        }else if(filterType==='rating'){
+            if (checked) {
+                setRatingCheckedValues([...ratingCheckedValues, value]);
+              } else {
+                setRatingCheckedValues(ratingCheckedValues.filter((v) => v !== value));
+              }
         }
     };
 
+    const ratingComponent = [];
+    for(let i=5; i>=1; i--){
+        ratingComponent.push(
+            <FormControlLabel 
+                key={i}
+                control={
+                    <Checkbox
+                        icon={<CropSquareIcon />}
+                        checkedIcon={<CheckBoxIcon />}
+                        value={i}
+                        onChange={(e) => handleChange(e, 'rating')}
+                    />
+                }
+                label={<Rating rating={i} />}
+            />
+        )
+    }
+
   return (
     <div className='filter-page'>
-      {testObj.map(element => <Accordion className="filter-accordion" key={element.id}>
+      <Accordion className="filter-accordion">
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          id={element.filterName}
+          id='brand'
         >
-          <p className='accordion-heading'>{element.filterName}</p>
+          <p className='accordion-heading'>BRAND</p>
         </AccordionSummary>
         <AccordionDetails className='accordion-details'>
-        {element.filterValue.map(fltrValue => <FormControlLabel 
+        {brands.map(fltrValue => <FormControlLabel 
                 control={
                     <Checkbox
                         icon={<CropSquareIcon />}
                         checkedIcon={<CheckBoxIcon />}
                         value={fltrValue}
-                        onChange={handleChange}
+                        onChange={(e) => handleChange(e, 'brand')}
                     />
                 }
                 label={fltrValue}
             />)}
         </AccordionDetails>
-      </Accordion>)}
-      
+      </Accordion>
+      <Accordion className="filter-accordion">
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          id='price'
+        >
+          <p className='accordion-heading'>PRICE RANGE</p>
+        </AccordionSummary>
+        <AccordionDetails className='accordion-details'>
+            <FormControlLabel 
+                control={
+                    <Checkbox
+                        icon={<CropSquareIcon />}
+                        checkedIcon={<CheckBoxIcon />}
+                        value={500}
+                        onChange={(e) => handleChange(e, 'price')}
+                    />
+                }
+                label='Under 500'
+            />
+            <FormControlLabel 
+                control={
+                    <Checkbox
+                        icon={<CropSquareIcon />}
+                        checkedIcon={<CheckBoxIcon />}
+                        value={3000}
+                        onChange={(e) => handleChange(e, 'price')}
+                    />
+                }
+                label='1000 To 3000'
+            />
+        </AccordionDetails>
+      </Accordion> 
+      <Accordion className="filter-accordion">
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          id='rating'
+        >
+          <p className='accordion-heading'>RATINGS</p>
+        </AccordionSummary>
+        <AccordionDetails className='accordion-details'>
+            {ratingComponent}
+        </AccordionDetails>
+      </Accordion>
     </div>
   )
 }

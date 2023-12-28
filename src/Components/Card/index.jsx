@@ -2,9 +2,7 @@ import { useContext } from 'react';
 
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import StarIcon from '@mui/icons-material/Star';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
-
+import Rating from '../Rating'
 import { ProductContext } from '../../Context/ProductContextProvider';
 
 import './Card.css';
@@ -17,20 +15,7 @@ function Card({
     rating,
     review
 }){
-    const { wishlist, updateWishList } = useContext(ProductContext)
-
-    function ratingComponent(rating){
-        const totalStars = 5;
-        const filledStars = Array(rating).fill(<StarIcon sx={{ color: 'rgb(253,211,61)'}} />);
-        const emptyStars = Array(totalStars - rating).fill(<StarBorderIcon />);
-    
-        return (
-            <>
-                {filledStars}
-                {emptyStars}
-            </>
-        );
-    }
+    const { wishlist, updateWishList } = useContext(ProductContext);
 
     const discountedPrice = (originalPrice) => {
         return Math.trunc(originalPrice*0.9);
@@ -83,7 +68,8 @@ function Card({
                 <p className="discounted-price">Rs.{discountedPrice(originalPrice)}</p>
             </div>
             <div className="rating-section">
-                <div className="rating-stars">{ratingComponent(rating)}</div>
+                {/* <div className="rating-stars">{ratingComponent(rating)}</div> */}
+                <div className="rating-stars"><Rating rating={rating} /></div>
                 <p className="reviews">({review})</p>
             </div>
         </div>

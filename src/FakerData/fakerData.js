@@ -1,20 +1,20 @@
 import { faker } from '@faker-js/faker';
 
-const NUMBER_OF_BRANDS = 6;
-const NUMBER_OF_PRODUCT = 24;
+const NUMBER_OF_BRANDS = 2;
+const NUMBER_OF_PRODUCT = 16;
 
 function getProductDetails(brandName){
   return{
     id: faker.string.uuid(),
     name: faker.commerce.productName(),
-    price: faker.commerce.price({min: 1000, max: 5000}),
+    price: faker.commerce.price({min: 100, max: 3000}),
     image: faker.image.urlLoremFlickr({
       width: 480,
       height: 640,
       category: "fashion"
     }),
     rating: faker.number.int({
-      min: 0,
+      min: 1,
       max: 5
     }),
     reviews: faker.number.int({
