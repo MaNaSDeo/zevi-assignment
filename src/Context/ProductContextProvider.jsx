@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
-import productsData from '../FakerData/fakerData'
-// console.log(productsData)
+import productsData from '../FakerData/fakerData';
 
 export const ProductContext = createContext({
     productsData: []
