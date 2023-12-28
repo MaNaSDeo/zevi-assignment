@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import './SearchSuggestion.css';
 import { ProductContext } from '../../Context/ProductContextProvider';
 
-// import { trendData } from '../../FakerData/fakerData';
-
 function SearchSuggestion() {
     const {trendData} = useContext(ProductContext)
     console.log(trendData)
@@ -44,7 +42,7 @@ function SearchSuggestion() {
         <p className="suggestion-heading">
             Popular Suggestions
         </p>
-        {trendData.map(element => <p key={element.id}>{element.name}</p>)}
+        {trendData.map(element => <Link to={'/product'}><p key={element.id}>{element.name}</p></Link>)}
       </div>
     </div>
   )

@@ -1,5 +1,4 @@
 import { createContext, useState,useEffect } from "react";
-// import productsData from '../FakerData/fakerData';
 import productsData, { brands, trendData } from '../FakerData/fakerData'
 
 export const ProductContext = createContext({

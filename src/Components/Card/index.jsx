@@ -17,8 +17,8 @@ function Card({
 }){
     const { wishlist, updateWishList } = useContext(ProductContext);
 
-    const discountedPrice = (originalPrice) => {
-        return Math.trunc(originalPrice*0.9);
+    const mrp = (originalPrice) => {
+        return Math.trunc(originalPrice*1.1);
     }
 
     function wishlistComponent(id){
@@ -64,8 +64,8 @@ function Card({
         <div className='card-bottom'>
             <p className='product-name'>{name}</p>
             <div className="price-section">
-                <p className="original-price">Rs.{Math.trunc(originalPrice)}</p>
-                <p className="discounted-price">Rs.{discountedPrice(originalPrice)}</p>
+                <p className="original-price">Rs.{mrp(originalPrice)}</p>
+                <p className="discounted-price">Rs.{Math.trunc(originalPrice)}</p>
             </div>
             <div className="rating-section">
                 {/* <div className="rating-stars">{ratingComponent(rating)}</div> */}

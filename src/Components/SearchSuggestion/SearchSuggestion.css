@@ -1,11 +1,12 @@
 .search-suggestion-page{
     width: 100%;
     height: auto;
-    background-color: white;
+    background-color: #ede9e8;
     padding: 2rem;
+    border-radius: 1rem;
 }
 .card{
-    width: 200px;
+    width: 180px;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -43,6 +44,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
+    margin-bottom: 3rem;
 }
 .text-suggestion p{
     margin-bottom: 0.25rem;
