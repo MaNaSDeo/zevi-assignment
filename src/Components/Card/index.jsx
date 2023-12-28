@@ -9,37 +9,15 @@ import { ProductContext } from '../../Context/ProductContextProvider';
 
 import './Card.css';
 
-function Card(
-//     {
-//     id,
-//     image,
-//     name,
-//     originalPrice,
-//     rating,
-//     review
-// }
-){
+function Card({
+    id,
+    image,
+    name,
+    originalPrice,
+    rating,
+    review
+}){
     const { wishlist, updateWishList } = useContext(ProductContext)
-
-    const testObj = [
-        {
-            "id": "4b373d94-0539-41ca-8d70-f77f9c98347b",
-            "name": "Small Steel Shoes",
-            "originalPrice": "1317.00",
-            "image": "https://loremflickr.com/480/640/fashion?lock=8037515336351744",
-            "rating": 4,
-            "review": 167,
-            "brand": "Nader LLC"
-        },{
-            "id": "11598a05-779f-4497-a81e-42571123b296",
-            "name": "Unbranded Fresh Tuna",
-            "originalPrice": "4971.00",
-            "image": "https://loremflickr.com/480/640/fashion?lock=3742676826456064",
-            "rating": 4,
-            "review": 259,
-            "brand": "Hills - Jones"
-        }
-    ]
 
     function ratingComponent(rating){
         const totalStars = 5;
@@ -87,31 +65,30 @@ function Card(
     }
 
     return(
-        <>{testObj.map(element => <div className="card" >
+    <div className="card" >
         <div className='card-top'>
-            <img src={element.image} alt={element.name} />
+            <img src={image} alt={name} />
             <button
                 className='wishlist-btn'
-                onClick={() => updateWishList(element.id)}
+                onClick={() => updateWishList(id)}
             >
-                {wishlistComponent(element.id)}
+                {wishlistComponent(id)}
             </button>
             <button className='view-product tracking-widest'>View Product</button>
         </div>
         <div className='card-bottom'>
-            <p className='product-name'>{element.name}</p>
+            <p className='product-name'>{name}</p>
             <div className="price-section">
-                <p className="original-price">Rs.{Math.trunc(element.originalPrice)}</p>
-                <p className="discounted-price">Rs.{discountedPrice(element.originalPrice)}</p>
+                <p className="original-price">Rs.{Math.trunc(originalPrice)}</p>
+                <p className="discounted-price">Rs.{discountedPrice(originalPrice)}</p>
             </div>
             <div className="rating-section">
-                <div className="rating-stars">{ratingComponent(element.rating)}</div>
-                <p className="reviews">({element.review})</p>
+                <div className="rating-stars">{ratingComponent(rating)}</div>
+                <p className="reviews">({review})</p>
             </div>
         </div>
-    </div>)}</>
-        
+    </div>  
     )
 }
 
-export default Card
+export default Card;
