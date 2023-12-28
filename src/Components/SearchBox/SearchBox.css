@@ -1,12 +1,15 @@
 .search-box{
-    width: 100%;
+    width: 60vw;
     height: auto;
     display: flex;
     justify-content: center;
     margin: 2rem auto;
+    border: 1px solid gray;
+    border-radius: 1rem;
 }
 .search-box input{
-    width: 50vw;
+    /* width: 50vw; */
+    flex: 1;
     height: 5rem;
     border: none;
     border-radius: 1rem 0 0 1rem;

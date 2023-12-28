@@ -1,0 +1,19 @@
+.product-page{
+    padding: 0 1rem;
+}
+.search-result-heading{
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin: 2rem 0;
+}
+.rating-and-cards{
+    width: 100%;
+    display: flex;
+}
+.filter{
+    margin-right: 1rem;
+}
+.card-container{
+    flex: 1;
+    /* margin: 0 1rem; */
+}
