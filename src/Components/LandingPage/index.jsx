@@ -8,7 +8,6 @@ function LandingPage() {
 
   // const {productsData} = useContext(ProductContext)
 
-  // console.log(productsData)
   return (
     <div className='landing-page'>
       <Header />

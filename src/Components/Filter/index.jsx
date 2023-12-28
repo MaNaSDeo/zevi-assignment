@@ -9,41 +9,14 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 import './Filter.css'
 
-import { useState } from 'react';
+import { useContext } from 'react';
 import { brands } from '../../FakerData/fakerData'
 import Rating from '../Rating'
 
+import { ProductContext } from '../../Context/ProductContextProvider';
+
 function Filter() {
-    const [brandCheckedValues, setBrandCheckedValues] = useState([]);
-    const [priceCheckedValues, setPriceCheckedValues] = useState([]);
-    const [ratingCheckedValues, setRatingCheckedValues] = useState([]);
-
-    console.log(brandCheckedValues, priceCheckedValues, ratingCheckedValues);
-
-    const handleChange = (event, filterType) => {
-        const value = event.target.value;
-        const checked = event.target.checked;
-
-        if(filterType==='brand'){
-            if (checked) {
-                setBrandCheckedValues([...brandCheckedValues, value]);
-              } else {
-                setBrandCheckedValues(brandCheckedValues.filter((v) => v !== value));
-              }
-        }else if(filterType==='price'){
-            if (checked) {
-                setPriceCheckedValues([...priceCheckedValues, value]);
-              } else {
-                setPriceCheckedValues(priceCheckedValues.filter((v) => v !== value));
-              }
-        }else if(filterType==='rating'){
-            if (checked) {
-                setRatingCheckedValues([...ratingCheckedValues, value]);
-              } else {
-                setRatingCheckedValues(ratingCheckedValues.filter((v) => v !== value));
-              }
-        }
-    };
+  const { handleChange } = useContext(ProductContext);
 
     const ratingComponent = [];
     for(let i=5; i>=1; i--){
@@ -99,7 +72,7 @@ function Filter() {
                     <Checkbox
                         icon={<CropSquareIcon />}
                         checkedIcon={<CheckBoxIcon />}
-                        value={500}
+                        value={[0, 500]}
                         onChange={(e) => handleChange(e, 'price')}
                     />
                 }
@@ -110,7 +83,7 @@ function Filter() {
                     <Checkbox
                         icon={<CropSquareIcon />}
                         checkedIcon={<CheckBoxIcon />}
-                        value={3000}
+                        value={[1000, 3000]}
                         onChange={(e) => handleChange(e, 'price')}
                     />
                 }
