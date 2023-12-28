@@ -31,11 +31,13 @@ for(let i=0; i<NUMBER_OF_BRANDS; i++){
   brands.push(faker.company.name());
 }
 
-export const productData = (NUMBER_OF_PRODUCT) => {
-  const products = [];
+function productData(NUMBER_OF_PRODUCT) {
+  const res = [];
 
   for(let j=0; j<NUMBER_OF_PRODUCT; j++){
-    products.push(getProductDetails(brands[j%NUMBER_OF_BRANDS]))
+    res.push(getProductDetails(brands[j%NUMBER_OF_BRANDS]))
   }
-  return products;
+  return res;
 }
+
+export default productData(NUMBER_OF_PRODUCT);
