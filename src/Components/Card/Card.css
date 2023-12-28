@@ -4,7 +4,6 @@
     border: none;
     border-radius: .5rem;
     margin: 1rem auto;
-    border: 2px solid red;
 }
 .card-top{
     width: 100%;
@@ -46,8 +45,12 @@
     padding-left: 1px;
 }
 .product-name{
+    width: 100%;
     font-size: 1.5rem;
     font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .price-section{
     display: flex;
