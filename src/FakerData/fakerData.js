@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker';
 
 const NUMBER_OF_BRANDS = 2;
 const NUMBER_OF_PRODUCT = 16;
-const NUMBER_OF_SUGGESTION = 5;
+const NUMBER_OF_SUGGESTION = 4;
 
 function getProductDetails(brandName){
   return{

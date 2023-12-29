@@ -5,7 +5,6 @@ import { ProductContext } from '../../Context/ProductContextProvider';
 
 function SearchSuggestion() {
     const {trendData} = useContext(ProductContext)
-    console.log(trendData)
 
     function SuggestionCard({
         image,
