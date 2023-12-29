@@ -44,4 +44,17 @@
     top: calc(100%);
     z-index: 1;
 }
-  
+
+@media (max-width: 600px){
+    .search-box button{
+        width: 5rem;
+        height: 5rem;
+        margin-left: 0.5rem; 
+    }
+    .search-Icon{
+        height: 2rem; 
+        width: 2rem; 
+        font-size: 2rem; 
+        padding: 0.75rem; 
+    }
+}
