@@ -17,3 +17,12 @@
     flex: 1;
     /* margin: 0 1rem; */
 }
+
+@media (max-width: 600px){
+    .rating-and-cards{
+        flex-direction: column;
+    }
+    .filter{
+        margin: 0 0 1.5rem 0;
+    }
+}

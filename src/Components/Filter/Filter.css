@@ -10,3 +10,9 @@
     display: flex;
     flex-direction: column;
 }
+@media (max-width: 600px){
+    .filter-page{
+        width: 85vw !important;
+        margin: 0 auto;
+    }
+}

@@ -21,6 +21,9 @@
 }
 .card-top img{
     border-radius: 0.4rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .product-name{
     font-weight: 500;
@@ -48,4 +51,10 @@
 }
 .text-suggestion p{
     margin-bottom: 0.25rem;
+}
+
+@media (max-width: 600px){
+    .suggestion-card-container{
+        justify-content: center;
+    }
 }
